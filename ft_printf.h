@@ -6,7 +6,7 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 15:10:05 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/06/02 21:11:47 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/02 21:15:20 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		hexhandle(unsigned int num, const char bors);
 int		ptrhandle(unsigned long long num, const char bors);
 void	ptrconv(unsigned long long num, const char bors);
 int		ptrlen(unsigned	long long num);
-
 
 //Utilities
 int		ft_strlen(const char *str);
