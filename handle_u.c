@@ -6,7 +6,7 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:30:27 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/05/23 23:52:49 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/02 20:53:41 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 static int	ft_unintlen(const unsigned int n)
 {
-    unsigned int    x;
+	unsigned int	x;
 	unsigned int	len;
 
-    x = n;
+	x = n;
 	len = 0;
 	if (x == 0)
 		len = 1;
@@ -33,12 +33,12 @@ static int	ft_unintlen(const unsigned int n)
 
 char	*ft_unitoa(unsigned int n)
 {
-	char                *itoa;
+	char				*itoa;
 	unsigned int		len;
 
 	len = ft_unintlen(n);
 	if (n == 0 && len == 1)
-		return (ft_strdup("0")); 
+		return (ft_strdup("0"));
 	itoa = (char *)malloc((len + 1) * sizeof(char));
 	if (!itoa)
 		return (NULL);
@@ -51,37 +51,20 @@ char	*ft_unitoa(unsigned int n)
 	return (itoa);
 }
 
-int uhandle(unsigned int n)
+int	uhandle(unsigned int n)
 {
-    unsigned int len;
-    unsigned int i;
-    char *itoad;
+	unsigned int	len;
+	unsigned int	i;
+	char			*itoad;
 
-    i = 0;
-    len = ft_unintlen(n);
-
-    itoad = ft_unitoa(n);
-    while (i < len)
-    {
-        write(1, &itoad[i], 1);
-        i++;
-    }
+	i = 0;
+	len = ft_unintlen(n);
+	itoad = ft_unitoa(n);
+	while (i < len)
+	{
+		write(1, &itoad[i], 1);
+		i++;
+	}
 	free(itoad);
-    return (len);
+	return (len);
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-//     unsigned int    unint;
-//     unsigned int    unint2;
-
-//     unint = 42069;
-//     unint2 = -42069;
-//     printf("\nunint size: %u", uhandle(unint));
-//     printf("\nunint size: %u", uhandle(unint2));
-
-
-//     return (0);
-// }

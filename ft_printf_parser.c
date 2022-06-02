@@ -6,21 +6,21 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 15:01:05 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/06/01 18:08:04 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/02 21:05:20 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int typehandler(va_list inputs, const char format)
+int	typehandler(va_list inputs, const char format)
 {
-	int counter;
-	
+	int	counter;
+
 	counter = 0;
 	if (format == 'c')
 		counter = chandle(va_arg(inputs, int));
 	if (format == 's')
-		counter = strhandle(va_arg(inputs, char*));
+		counter = strhandle(va_arg(inputs, char *));
 	if (format == 'i' || format == 'd')
 		counter = idhandle(va_arg(inputs, int));
 	if (format == 'u')

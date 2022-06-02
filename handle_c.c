@@ -6,7 +6,7 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:30:11 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/05/19 22:38:30 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/02 20:36:16 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int chandle(char c)
+int	chandle(char c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }
-
-

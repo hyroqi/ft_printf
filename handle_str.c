@@ -6,35 +6,34 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:30:25 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/05/22 13:01:12 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/02 20:40:07 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int strhandle(const char *str)
+int	strhandle(const char *str)
 {
-    int i;
-    char    *str2;
-    
-    i = 0;
-    if (str == NULL)
-    {
-        str2 = "(null)";
-        while (str2[i])
-        {
-            write(1, &str2[i], 1);
-            i++;
-        }
-        return (i);
-    }
-    
-    while (str[i])
-    {
-        write(1, &str[i], 1);
-        i++;
-    }
-    return (i);
+	int		i;
+	char	*str2;
+
+	i = 0;
+	if (str == NULL)
+	{
+		str2 = "(null)";
+		while (str2[i])
+		{
+			write(1, &str2[i], 1);
+			i++;
+		}
+		return (i);
+	}
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }
 
 // #include <stdio.h>
