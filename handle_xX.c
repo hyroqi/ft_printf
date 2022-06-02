@@ -110,9 +110,9 @@
 // 	return (count);
 // }
 
-int	hexlen(unsigned	int num)
+int	hexlen(unsigned	long long num)
 {
-	int	len;
+	long long	len;
 
 	len = 0;
 	while (num != 0)
@@ -120,10 +120,10 @@ int	hexlen(unsigned	int num)
 		len++;
 		num = num / 16;
 	}
-	return (len);
+	return ((int)len);
 }
 
-void	hexconv(unsigned int num, const char bors)
+void	hexconv(unsigned long long num, const char bors)
 {
 	if (num >= 16)
 	{
@@ -144,7 +144,7 @@ void	hexconv(unsigned int num, const char bors)
 	}
 }
 
-int	hexhandle(unsigned int num, const char bors)
+int	hexhandle(unsigned long long num, const char bors)
 {
 	if (num == 0)
 		return (write(1, "0", 1));

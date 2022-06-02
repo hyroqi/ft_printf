@@ -30,7 +30,7 @@ int typehandler(va_list inputs, const char format)
 	if (format == 'X')
 		counter = hexhandle(va_arg(inputs, int), 'X');
 	if (format == 'p')
-		counter = handleptr(va_arg(inputs, unsigned int));
+		counter = handleptr(va_arg(inputs, unsigned long long));
 	if (format == '%')
 		counter = write(1, "%", 1);
 	return (counter);

@@ -13,12 +13,15 @@
 #include "ft_printf.h"
 #include <unistd.h>
 
-int handleptr(unsigned int ptr)
+int handleptr(unsigned long long ptr)
 {
 	int	print_length;
 
 	if (!ptr)
-		write(1, "nullptr", 7);
+	{
+		write(1, "NULL", 4);
+		return (4);
+	}
 	print_length = 0;
 	print_length += write(1, "0x", 2);
 	print_length += hexhandle(ptr, 'x');

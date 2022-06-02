@@ -27,10 +27,10 @@ int typehandler(va_list inputs, const char format);
 //Handle Handler
 int     chandle(char c);
 int     idhandle(int n);
-int     handleptr(unsigned int ptr);
+int     handleptr(unsigned long long ptr);
 int     strhandle(const char *str);
 int     uhandle(unsigned int n);
-int	    hexhandle(unsigned int num, const char bors);
+int	    hexhandle(unsigned long long num, const char bors);
 
 //Utilities
 int 	ft_strlen(const char *str);

@@ -3,11 +3,9 @@
 
 int main(void)
 {
-    void    *ptr;
+    void    *ptr = 0;
 
-    long lng = __LONG_MAX__;
-
-    ptr = &lng;
-    printf("NP : %p\n", ptr);
-    ft_printf(" HP : %p\n", ptr);
+    printf("NP : %p %p\n", ptr, ptr);
+    printf("NP : %p %p\n", ptr, ptr);
+    ft_printf("HP : %p %p\n", ptr, ptr);
 }
