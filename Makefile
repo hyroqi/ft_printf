@@ -6,13 +6,13 @@
 #    By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 18:41:06 by hgabriel          #+#    #+#              #
-#    Updated: 2022/05/25 19:36:48 by hgabriel         ###   ########.fr        #
+#    Updated: 2022/06/03 13:40:06 by hgabriel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS 		= ./ft_printf.c		\
-			   ./ft_printf_parser.c	\
-			   ./ft_printf_utils.c	\
+SRCS 		=  ft_printf.c		\
+			   ft_printf_parser.c	\
+			   ft_printf_utils.c	\
 			   handle_c.c			\
 			   handle_id.c			\
 			   handle_ptr.c			\
@@ -20,7 +20,9 @@ SRCS 		= ./ft_printf.c		\
 			   handle_u.c			\
 			   handle_xX.c			\
 
-OBJS 		= ${SRCS:.c=.o}
+OBJSDIR 	= obj/
+
+OBJS 		= $(addprefix $(OBJSDIR), ${SRCS:.c=.o})
 
 NAME		= ${LIB}
 LIB			= libftprintf.a
@@ -32,11 +34,12 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	ar rcs ${LIB} ${OBJS}
 
-.c.o:
-	${CC} ${CFLAGS} -I. ft_printf.h -c $<
+$(OBJSDIR)%.o: %.c
+	@mkdir -p $(OBJSDIR)
+	${CC} ${CFLAGS} -I. -c $< -o $@
 
 clean:
-	rm -f ${OBJS}
+	rm -rf ${OBJSDIR}
 
 fclean: clean
 	rm -f ${LIB}

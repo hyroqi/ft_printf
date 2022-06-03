@@ -6,7 +6,7 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:30:23 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/06/02 21:14:31 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/03 13:29:08 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int	ptrlen(unsigned	long long num)
 	long long	len;
 
 	len = 0;
+	if (num == 0)
+	{
+		return(1);
+	}
 	while (num != 0)
 	{
 		len++;
@@ -49,9 +53,9 @@ void	ptrconv(unsigned long long num, const char bors)
 
 int	ptrhandle(unsigned long long num, const char bors)
 {
-	if (num == 0)
-		return (write(1, "0", 1));
-	else
+	// if (num == 0)
+	// 	return (write(1, "0", 1));
+	// else
 		ptrconv(num, bors);
 	return (ptrlen(num));
 }
@@ -60,11 +64,11 @@ int	handleptr(unsigned long long ptr)
 {
 	int	print_length;
 
-	if (!ptr)
-	{
-		write(1, "NULL", 4);
-		return (4);
-	}
+	// if (!ptr)
+	// {
+	// 	write(1, "0x0", 4);
+	// 	return (3);
+	// }
 	print_length = 0;
 	print_length += write(1, "0x", 2);
 	print_length += ptrhandle(ptr, 'x');
