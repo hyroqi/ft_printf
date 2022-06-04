@@ -43,6 +43,7 @@ clean:
 
 fclean: clean
 	rm -f ${LIB}
+	rm -f *.gch
 
 re: fclean all
 
