@@ -6,7 +6,7 @@
 #    By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 18:41:06 by hgabriel          #+#    #+#              #
-#    Updated: 2022/06/09 21:24:15 by hgabriel         ###   ########.fr        #
+#    Updated: 2022/06/15 05:11:21 by hgabriel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,21 @@ OBJSDIR 	= obj/
 OBJS 		= $(addprefix $(OBJSDIR), ${SRCS:.c=.o})
 
 LIB			= libftprintf.a
-PRELIBS		= -Llibft -lft
-INCLUDES	= -Iincludes -Ilibft
+LIBFT		= libft/
+INCLUDES	= includes
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs ${LIB} ${OBJS}
+	make re -C ${LIBFT}
+	ar rcs ${LIB} ${OBJS} ${LIBFT}*.o
 
 $(OBJSDIR)%.o: $(SRCSDIR)%.c
 	@mkdir -p $(OBJSDIR)
-	${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@
+	${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o $@
 
 clean:
 	rm -rf ${OBJSDIR}
