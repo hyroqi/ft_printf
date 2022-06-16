@@ -6,23 +6,11 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:30:32 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/06/02 20:25:00 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:19:55 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strdup(const char *s)
 {

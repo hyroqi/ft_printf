@@ -6,7 +6,7 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:30:21 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/06/02 20:58:33 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/06/16 13:13:51 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_intlen(int n)
 	return (len);
 }
 
-static char	*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*itoa;
 	int		len;
